@@ -1,0 +1,94 @@
+@use '../styles/tokens' as *;
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  perspective: 1200px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cardInner {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: $card-bg;
+  box-shadow:
+    0 12px 32px rgba(0,0,0,0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(.2,.8,.2,1);
+}
+
+.isFlipped {
+  transform: rotateY(180deg);
+}
+
+.cardFace {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 28px 24px;
+  backface-visibility: hidden;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 12px;
+}
+
+.cardFront {
+  background: linear-gradient(160deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+  background: linear-gradient(340deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+}
+
+.word {
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+.ipa {
+  font-size: 20px;
+  color: $muted;
+}
+
+.translation {
+  font-size: 36px;
+  font-weight: 600;
+  color: $accent;
+}
+
+/* Swipe animations */
+.swipeLeft .cardInner {
+  transition: transform 0.28s ease, opacity 0.28s ease, filter 0.28s ease;
+  transform: translateX(-120%) rotate(-8deg);
+  opacity: 0;
+  filter: blur(1px);
+}
+
+.swipeRight .cardInner {
+  transition: transform 0.28s ease, opacity 0.28s ease, filter 0.28s ease;
+  transform: translateX(120%) rotate(8deg);
+  opacity: 0;
+  filter: blur(1px);
+}
+
+/* Hover/focus */
+.card:focus-visible .cardInner,
+.card:hover .cardInner {
+  box-shadow:
+    0 16px 40px rgba(0,0,0,0.45),
+    inset 0 0 0 1px rgba(59,130,246,0.25);
+  outline: none;
+}
+
+@media (max-width: 400px) {
+  .word { font-size: 36px; }
+  .translation { font-size: 30px; }
+}
+
