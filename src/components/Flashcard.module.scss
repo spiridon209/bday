@@ -15,10 +15,32 @@
   border-radius: 16px;
   background: $card-bg;
   box-shadow:
-    0 12px 32px rgba(0, 0, 0, 0.35),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+    0 12px 32px rgba(0,0,0,0.35),
+    inset 0 0 0 1px rgba(255,255,255,0.06),
+    0 0 12px rgba(59,130,246,0.45),
+    0 0 32px rgba(34,197,94,0.20);
   transform-style: preserve-3d;
-  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: transform 0.6s cubic-bezier(.2,.8,.2,1), box-shadow .8s ease;
+
+  /* Neon pulse */
+  animation: neonPulse 2.6s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow:
+      0 12px 32px rgba(0,0,0,0.35),
+      inset 0 0 0 1px rgba(255,255,255,0.06),
+      0 0 10px rgba(59,130,246,0.35),
+      0 0 24px rgba(34,197,94,0.15);
+  }
+  50% {
+    box-shadow:
+      0 12px 32px rgba(0,0,0,0.35),
+      inset 0 0 0 1px rgba(255,255,255,0.06),
+      0 0 18px rgba(59,130,246,0.60),
+      0 0 40px rgba(168,85,247,0.35);
+  }
 }
 
 .isFlipped {
@@ -38,12 +60,18 @@
 }
 
 .cardFront {
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+  /* MEX front: green-white tones */
+  background:
+    radial-gradient(800px 400px at 20% 10%, rgba($mx-green,0.28), rgba($mx-green,0) 60%),
+    linear-gradient(160deg, rgba($mx-white,0.12), rgba($mx-white,0));
 }
 
 .cardBack {
   transform: rotateY(180deg);
-  background: linear-gradient(340deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+  /* MEX back: red-gold tones */
+  background:
+    radial-gradient(800px 400px at 80% 90%, rgba($mx-red,0.30), rgba($mx-red,0) 60%),
+    linear-gradient(340deg, rgba($mx-gold,0.18), rgba($mx-gold,0));
 }
 
 .word {

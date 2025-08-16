@@ -1,4 +1,4 @@
-@use '../styles/tokens.scss' as *;
+@use './styles/tokens' as *;
 
 .app {
   min-height: 100vh;
@@ -21,6 +21,19 @@
   height: min(70vh, 560px);
   display: grid;
   place-items: center;
+}
+
+.counter {
+  margin-top: 32px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  color: #1a1003;
+  background: linear-gradient(135deg, #ffd166 0%, #f4c430 60%, #ffb703 100%);
+  box-shadow:
+    0 0 10px rgba(244, 196, 48, 0.55),
+    0 0 18px rgba(255, 183, 3, 0.35);
 }
 
 .hint {

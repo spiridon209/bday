@@ -3,10 +3,25 @@ import Flashcard from './components/Flashcard.jsx'
 import styles from './App.module.scss'
 
 const DATA = [
-  { word: 'apple', ipa: 'ˈæp.əl', translation: 'яблоко' },
-  { word: 'book', ipa: 'bʊk', translation: 'книга' },
-  { word: 'river', ipa: 'ˈrɪv.ər', translation: 'река' },
-  { word: 'sun', ipa: 'sʌn', translation: 'солнце' },
+  { word: 'Amor', ipa: 'а-мóр', translation: 'любовь' },
+  { word: 'Negro', ipa: 'нé-гро', translation: 'чёрный' },
+  { word: 'Escuela', ipa: 'эс-куé-ла', translation: 'школа' },
+  { word: 'Hola', ipa: 'ó-ла', translation: 'привет' },
+  { word: 'Niño', ipa: 'ни́-ньо', translation: 'ребёнок (мальчик)' },
+  { word: 'Niña', ipa: 'ни́-ньа', translation: 'ребёнок (девочка)' },
+  { word: 'Cucaracha', ipa: 'ку-ка-рá-ча', translation: 'таракан' },
+  { word: 'Silla', ipa: 'сí-лья', translation: 'стул' },
+  { word: 'Extranjero', ipa: 'экс-тран-хé-ро', translation: 'иностранец' },
+  { word: 'Día', ipa: 'дí-а', translation: 'день' },
+  { word: 'Sombrero', ipa: 'сом-брé-ро', translation: 'шляпа' },
+  { word: 'Gato', ipa: 'гá-то', translation: 'кот' },
+  { word: 'Pastel', ipa: 'пас-тéль', translation: 'торт' },
+  { word: 'Mar', ipa: 'мар', translation: 'море' },
+  { word: 'Sol', ipa: 'соль', translation: 'солнце' },
+  { word: 'Familia', ipa: 'фа-мí-лья', translation: 'семья' },
+  { word: 'Flor', ipa: 'флор', translation: 'цветок' },
+  { word: 'Burro', ipa: 'бý-рро', translation: 'осёл' },
+  { word: 'Agua', ipa: 'á-гуа', translation: 'вода' },
 ]
 
 function App() {
@@ -24,7 +39,9 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <h1 className={styles.title}>Flashcards</h1>
+      <div className={styles.counter}>
+        {(index % DATA.length) + 1} / {DATA.length}
+      </div>
       <div className={styles.deck}>
         <Flashcard
           key={index}
