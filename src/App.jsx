@@ -11,7 +11,8 @@ const DATA = [
   { word: 'Niña', ipa: 'ни́-ньа', translation: 'ребёнок (девочка)' },
   { word: 'Cucaracha', ipa: 'ку-ка-рá-ча', translation: 'таракан' },
   { word: 'Silla', ipa: 'сí-лья', translation: 'стул' },
-  { word: 'Extranjero', ipa: 'экс-тран-хé-ро', translation: 'иностранец' },
+  { word: 'Libro', ipa: 'ли́-бро', translation: 'книга' },
+  { word: 'Risa', ipa: 'ри́-са', translation: 'смех' },
   { word: 'Día', ipa: 'дí-а', translation: 'день' },
   { word: 'Sombrero', ipa: 'сом-брé-ро', translation: 'шляпа' },
   { word: 'Gato', ipa: 'гá-то', translation: 'кот' },
@@ -19,9 +20,11 @@ const DATA = [
   { word: 'Mar', ipa: 'мар', translation: 'море' },
   { word: 'Sol', ipa: 'соль', translation: 'солнце' },
   { word: 'Familia', ipa: 'фа-мí-лья', translation: 'семья' },
+  { word: 'Cactus', ipa: 'кáк-тус', translation: 'кактус' },
   { word: 'Flor', ipa: 'флор', translation: 'цветок' },
   { word: 'Burro', ipa: 'бý-рро', translation: 'осёл' },
   { word: 'Agua', ipa: 'á-гуа', translation: 'вода' },
+  { word: 'Fiesta', ipa: 'фьéс-та', translation: 'праздник' },
 ]
 
 function App() {
