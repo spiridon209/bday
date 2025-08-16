@@ -12,7 +12,8 @@ export default function Flashcard({ card, onSwipeLeft, onSwipeRight, swipeDir = 
     preventScrollOnSwipe: true,
   })
 
-  const swipeClass = swipeDir === 'left' ? styles.swipeLeft : swipeDir === 'right' ? styles.swipeRight : ''
+  const swipeClass =
+    swipeDir === 'left' ? styles.swipeLeft : swipeDir === 'right' ? styles.swipeRight : ''
 
   return (
     <div
@@ -34,4 +35,3 @@ export default function Flashcard({ card, onSwipeLeft, onSwipeRight, swipeDir = 
     </div>
   )
 }
-

@@ -1,4 +1,4 @@
-@use '../styles/tokens' as *;
+@use '../styles/tokens.scss' as *;
 
 .app {
   min-height: 100vh;
@@ -26,4 +26,3 @@
 .hint {
   color: $muted;
 }
-
